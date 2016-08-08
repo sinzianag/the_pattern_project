@@ -2,6 +2,22 @@ from PIL import Image
 import numpy as np
 from random import randint
 
+def getColor():
+    randomColor = randint(0, 4)
+    if randomColor == 0:
+        color = (234, 96, 69)
+    elif randomColor == 1:
+        color = (248, 202, 77)
+    elif randomColor == 2:
+        color = (63, 86, 102)
+    elif randomColor == 3:
+        color = (47, 52, 64)
+    elif randomColor == 4:
+        color = (245, 229, 192)
+
+    return color
+
+
 img = Image.new( 'RGB', (1080,1080), "white") # create a new black image
 pixels = img.load() # create the pixel map
 
@@ -11,17 +27,7 @@ for i in range(0, img.size[0], 60):
         b = np.array([i+60,j])
         x = np.array([i+60,j+30])
 
-        randomColor = randint(0, 4)
-        if randomColor == 0:
-            color = (234, 96, 69)
-        elif randomColor == 1:
-            color = (248, 202, 77)
-        elif randomColor == 2:
-            color = (63, 86, 102)
-        elif randomColor == 3:
-            color = (47, 52, 64)
-        elif randomColor == 4:
-            color = (245, 229, 192)
+        color = getColor()
 
         orientation = randint(0,3)
         for k in range(0,60) :

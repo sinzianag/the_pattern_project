@@ -14,6 +14,21 @@ def pointInTriangle(p,a,b,c) :
         return True
     return False
 
+def getColor():
+    randomColor = randint(0, 3)
+    if randomColor == 0:
+        color = (198, 224, 112)
+    elif randomColor == 1:
+        color = (145, 196, 108)
+    elif randomColor == 2:
+        color = (40, 125, 125)
+    elif randomColor == 3:
+        color = (28, 52, 76)
+    elif randomColor == 4:
+        color = (245, 229, 192)
+
+    return color
+
 img = Image.new( 'RGB', (1080,1080), "white") # create a new black image
 pixels = img.load() # create the pixel map
 
@@ -24,17 +39,7 @@ for i in range(0, img.size[0], 60):
 
         x = np.array([i + 4 + randint(0,50), j + 4 +  randint(0,50)])
 
-        randomColor = randint(0, 3)
-        if randomColor == 0:
-            color = (198, 224, 112)
-        elif randomColor == 1:
-            color = (145, 196, 108)
-        elif randomColor == 2:
-            color = (40, 125, 125)
-        elif randomColor == 3:
-            color = (28, 52, 76)
-        elif randomColor == 4:
-            color = (245, 229, 192)
+        color = getColor()
 
         for k in range(0,60) :
             for l in range(0,60) :
