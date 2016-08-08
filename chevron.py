@@ -21,7 +21,7 @@ for i in range(0, img.size[0], 30):
     for j in range(0, img.size[1], 30):
 
         color = getColor()
-        
+
         if (i/30) % 2 == 0:
             orientation = (j/30) % 4;
         else :
